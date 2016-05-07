@@ -222,7 +222,7 @@ streznik.post('/prijava', function(zahteva, odgovor) {
       sporocilo2 = "Prišlo je do napake pri registraciji nove stranke. Prosim preverite vnešene podatke in poskusite znova.";
           }
 
-    odgovor.end();
+    odgovor.redirect('/prijava');
     vrniStranke(function(napaka1, stranke) {
       vrniRacune(function(napaka2, racuni) {
         odgovor.render('prijava', {sporocilo: sporocilo2, seznamStrank: stranke, seznamRacunov: racuni});  
